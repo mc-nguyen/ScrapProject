@@ -1,13 +1,14 @@
-require 'httparty'
 require 'nokogiri'
+require 'httparty'
 require 'byebug'
 
-def scraper
-  url = "http://books.toscrape.com/"
-  unparsedPage = HTTParty.get(url)
-  parsedPage = Nokogiri::HTML(unparsedPage)
-  byebug
+class Scraper
+  def initialize
+    @url = "http://books.toscrape.com/"
+    @doc = Nokogiri::HTML(HTTParty.get(@url))
+    byebug
+  end
+
 end
 
-scraper()
-byebug
+scrap = Scraper.new

@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 require 'nokogiri'
-require 'httparty'
 require 'open-uri'
-require 'csv'
 
 # @!group
 class Scraper
@@ -11,31 +9,15 @@ class Scraper
     @url = 'http://books.toscrape.com/'
     @html = URI.open(@url).read
     @doc = Nokogiri::HTML(@html)
-    @total_page = @doc.search('li.current')[0].children[0].text.strip!.split(' ')[3].to_i
+    total_books = @doc.search('form.form-horizontal').text.strip!.split(' ')[0].to_i
+    books_per_page = @doc.search('form.form-horizontal').text.strip!.split(' ')[-1].to_i
+    @total_page = (total_books.to_f / books_per_page).ceil(0)
+    puts @total_page
     @book_list = []
     @categories = {}
 
-    # categories setup
-    category = @doc.search('ul.nav.nav-list').children[1].children[3].children
-    link = @doc.search('ul.nav.nav-list').children[1].children[1].attributes['href'].value
-    @categories[@doc.search('ul.nav.nav-list').children[1].children[1].text.strip!] = @url + link
-
-    category.each do |x|
-      @categories[x.text.strip!] = @url + x.children[1].attributes['href'].value if x.text.strip! != ''
-    end
-    @categories.each do |cate, value|
-      puts "#{cate}: #{value}"
-    end
-
-    current = Time.now
-    threads = []
-    @total_page.times do |i|
-      url = @url + "catalogue/page-#{i + 1}.html"
-      threads << Thread.new { collectBooks(url) }
-    end
-    threads.each(&:join)
-    current = Time.now - current
-    puts "Time execution: #{current}"
+    collectCategories
+    collectBooksThreading
   end
 
   def convert(word)
@@ -63,6 +45,32 @@ class Scraper
       }
       @book_list << book
     end
+  end
+
+  def collectCategories
+    # categories setup
+    category = @doc.search('ul.nav.nav-list').children[1].children[3].children
+    link = @doc.search('ul.nav.nav-list').children[1].children[1].attributes['href'].value
+    @categories[@doc.search('ul.nav.nav-list').children[1].children[1].text.strip!] = @url + link
+
+    category.each do |x|
+      @categories[x.text.strip!] = @url + x.children[1].attributes['href'].value if x.text.strip! != ''
+    end
+    @categories.each do |cate, value|
+      puts "#{cate}: #{value}"
+    end
+  end
+
+  def collectBooksThreading
+    current = Time.now
+    threads = []
+    @total_page.times do |i|
+      url = @url + "catalogue/page-#{i + 1}.html"
+      threads << Thread.new { collectBooks(url) }
+    end
+    threads.each(&:join)
+    current = Time.now - current
+    puts "Time execution: #{current}"
   end
 end
 

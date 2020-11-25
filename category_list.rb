@@ -23,7 +23,7 @@ class CategoryList < FXList
 
   def collecting
     url = 'http://books.toscrape.com/'
-    html = URI.open(url).read
+    html = URI.open(url)&.read
     doc = Nokogiri::HTML(html)
     category = doc.search('ul.nav.nav-list').children[1].children[3].children
     category.each do |x|

@@ -7,7 +7,7 @@ require 'open-uri'
 class Scraper
   def initialize
     @url = 'http://books.toscrape.com/'
-    @html = URI.open(@url).read
+    @html = URI.open(@url)&.read
     @doc = Nokogiri::HTML(@html)
     total_books = @doc.search('form.form-horizontal').text.strip!.split(' ')[0].to_i
     books_per_page = @doc.search('form.form-horizontal').text.strip!.split(' ')[-1].to_i
@@ -32,7 +32,7 @@ class Scraper
   end
 
   def collectBooks(url)
-    html = URI.open(url).read
+    html = URI.open(url)&.read
     doc = Nokogiri::HTML(html)
     doc.search('article.product_pod').each do |ele|
       book = {

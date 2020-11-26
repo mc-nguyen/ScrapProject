@@ -41,7 +41,8 @@ class Scraper
         'title' => ele.css('h3')[0].children[0].attributes['title'].value,
         'link' => @url + ele.css('h3')[0].children[0].attributes['href'].value,
         'price in £' => ele.css('p.price_color').text.tr('£', '').to_f,
-        'in stock' => ele.css('p.instock.availability').text.strip! == 'In stock'
+        'in stock' => ele.css('p.instock.availability').text.strip! == 'In stock',
+        'categories' => []
       }
       @book_list << book
     end

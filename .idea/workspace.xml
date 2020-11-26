@@ -19,11 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="544f15b0-6e9d-4c1d-8209-163beaf6264a" name="Default Changelist" comment="GUI initialized">
-      <change afterPath="$PROJECT_DIR$/category_list.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter_search.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/untitled.iml" afterDir="false" />
+    <list default="true" id="544f15b0-6e9d-4c1d-8209-163beaf6264a" name="Default Changelist" comment="edit scraper.rb as I seperated and add category_list.rb as FXList and filter_search.rb as FXGroupBox">
+      <change afterPath="$PROJECT_DIR$/PriceRange.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content_include.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/submission.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category_list.rb" beforeDir="false" afterPath="$PROJECT_DIR$/category_list.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter_search.rb" beforeDir="false" afterPath="$PROJECT_DIR$/filter_search.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.rb" beforeDir="false" afterPath="$PROJECT_DIR$/gui.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/scraper.rb" afterDir="false" />
     </list>
@@ -39,6 +41,9 @@
         <option value="Ruby Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,7 +65,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
-  <component name="RunManager" selected="Ruby.scraper">
+  <component name="RunManager" selected="Ruby.gui">
     <configuration name="bookFinder" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="untitled" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
@@ -119,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Ruby.scraper" />
         <item itemvalue="Ruby.gui" />
+        <item itemvalue="Ruby.scraper" />
         <item itemvalue="Ruby.category_list" />
         <item itemvalue="Ruby.bookFinder" />
       </list>
@@ -144,7 +149,8 @@
       <workItem from="1606167719081" duration="1400000" />
       <workItem from="1606169693816" duration="12472000" />
       <workItem from="1606197603466" duration="1323000" />
-      <workItem from="1606256418817" duration="9447000" />
+      <workItem from="1606256418817" duration="9559000" />
+      <workItem from="1606365190903" duration="7654000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project with parsing a page from http://books.toscrape.com/">
       <created>1606082487045</created>
@@ -202,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606198909535</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="edit scraper.rb as I seperated and add category_list.rb as FXList and filter_search.rb as FXGroupBox">
+      <created>1606281371844</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606281371844</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +239,8 @@
     <MESSAGE value="adding threads" />
     <MESSAGE value="print categories with their link" />
     <MESSAGE value="GUI initialized" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI initialized" />
+    <MESSAGE value="edit scraper.rb as I seperated and add category_list.rb as FXList and filter_search.rb as FXGroupBox" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit scraper.rb as I seperated and add category_list.rb as FXList and filter_search.rb as FXGroupBox" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1606177744224">
@@ -253,22 +267,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="761" y="224" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606082380469" />
-    <state width="1860" height="436" key="GridCell.Tab.0.bottom" timestamp="1606280450841">
+    <state width="1877" height="436" key="GridCell.Tab.0.bottom" timestamp="1606372434088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="436" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606280450841" />
-    <state width="1860" height="436" key="GridCell.Tab.0.center" timestamp="1606280450841">
+    <state width="1877" height="436" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606372434088" />
+    <state width="1877" height="436" key="GridCell.Tab.0.center" timestamp="1606372434088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="436" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606280450841" />
-    <state width="1860" height="436" key="GridCell.Tab.0.left" timestamp="1606280450841">
+    <state width="1877" height="436" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606372434088" />
+    <state width="1877" height="436" key="GridCell.Tab.0.left" timestamp="1606372434087">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="436" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606280450841" />
-    <state width="1860" height="436" key="GridCell.Tab.0.right" timestamp="1606280450841">
+    <state width="1877" height="436" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606372434087" />
+    <state width="1877" height="436" key="GridCell.Tab.0.right" timestamp="1606372434088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="436" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606280450841" />
+    <state width="1877" height="436" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606372434088" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1606183164382">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -289,19 +303,23 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606097322316" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1606198914179">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1606281375925">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606198914179" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606281375925" />
+    <state x="752" y="378" key="scopes" timestamp="1606365276214">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="752" y="378" key="scopes/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606365276214" />
     <state x="623" y="225" key="search.everywhere.popup" timestamp="1606100668367">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606100668367" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ScrapProject@scraper.rcov" NAME="scraper Coverage Results" MODIFIED="1606280188822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
+    <SUITE FILE_PATH="coverage/ScrapProject@scraper.rcov" NAME="scraper Coverage Results" MODIFIED="1606366727061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
     <SUITE FILE_PATH="coverage/ScrapProject@bookFinder.rcov" NAME="bookFinder Coverage Results" MODIFIED="1606093926474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
     <SUITE FILE_PATH="coverage/ScrapProject@category_list.rcov" NAME="category_list Coverage Results" MODIFIED="1606258214393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
-    <SUITE FILE_PATH="coverage/ScrapProject@gui.rcov" NAME="gui Coverage Results" MODIFIED="1606279299317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
+    <SUITE FILE_PATH="coverage/ScrapProject@gui.rcov" NAME="gui Coverage Results" MODIFIED="1606372434078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
   </component>
 </project>

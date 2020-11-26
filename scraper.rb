@@ -16,8 +16,8 @@ class Scraper
     @book_list = []
     @categories = {}
 
-    collectCategories
-    collectBooksThreading
+    collect_categories
+    collect_books_threading
   end
 
   def convert(word)
@@ -31,7 +31,7 @@ class Scraper
     translate[word]
   end
 
-  def collectBooks(url)
+  def collect_books(url)
     html = URI.open(url)&.read
     doc = Nokogiri::HTML(html)
     doc.search('article.product_pod').each do |ele|
@@ -47,7 +47,7 @@ class Scraper
     end
   end
 
-  def collectCategories
+  def collect_categories
     # categories setup
     category = @doc.search('ul.nav.nav-list').children[1].children[3].children
     link = @doc.search('ul.nav.nav-list').children[1].children[1].attributes['href'].value
@@ -61,12 +61,12 @@ class Scraper
     end
   end
 
-  def collectBooksThreading
+  def collect_books_threading
     current = Time.now
     threads = []
     @total_page.times do |i|
       url = @url + "catalogue/page-#{i + 1}.html"
-      threads << Thread.new { collectBooks(url) }
+      threads << Thread.new { collect_books(url) }
     end
     threads.each(&:join)
     current = Time.now - current
@@ -74,4 +74,4 @@ class Scraper
   end
 end
 
-scrape = Scraper.new
+scraper = Scraper.new

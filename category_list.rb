@@ -1,23 +1,25 @@
+# frozen_string_literal: true
+
 require 'nokogiri'
 require 'open-uri'
 require 'fox16'
 include Fox
 
-class CategoryList < FXList
-  def initialize(p)
-    super(p, :opts => LIST_MULTIPLESELECT|LAYOUT_FIX_X|LAYOUT_FIX_Y|LAYOUT_FIX_WIDTH|LAYOUT_FIX_HEIGHT,
-          :x => 20, :y => 20,
-          :width => 560, :height => 100)
+class CategoryList < FXGroupBox
+  def initialize(p, y)
+    super(p, "Choose Category: ", :opts => LAYOUT_FILL_X | FRAME_RIDGE | LAYOUT_FIX_Y,
+          :y => y)
+    @list = FXList.new(self, opts: LIST_MULTIPLESELECT | LAYOUT_EXPLICIT,
+                       x: 40, y: 30, width: 500, height: 100)
     collecting
     selecting
   end
 
   def selecting
-    self.connect(SEL_COMMAND) do |sender, sel, index|
+    @list.connect(SEL_COMMAND) do
       @selected = []
-      self.each { |cate| @selected << cate if cate.selected? }
-      puts "Selected:"
-      @selected.each { |cate| puts "\t#{cate}" }
+      each { |cate| @selected << cate if cate.selected? }
+      puts 'Selected:'
     end
   end
 
@@ -27,9 +29,11 @@ class CategoryList < FXList
     doc = Nokogiri::HTML(html)
     category = doc.search('ul.nav.nav-list').children[1].children[3].children
     category.each do |x|
-      if x.text.strip! != ""
-        self.appendItem(x.text.strip!)
-      end
+      @list.appendItem(x.text.strip!) if x.text.strip! != ''
     end
+  end
+
+  def get_selected_categories
+    @selected
   end
 end

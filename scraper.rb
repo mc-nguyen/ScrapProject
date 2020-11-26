@@ -57,9 +57,8 @@ class Scraper
     category.each do |x|
       @categories[x.text.strip!] = @url + x.children[1].attributes['href'].value if x.text.strip! != ''
     end
-    @categories.each do |cate, value|
-      puts "#{cate}: #{value}"
-    end
+    
+    @categories
   end
 
   def collect_books_threading

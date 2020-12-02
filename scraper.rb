@@ -13,7 +13,7 @@ class Scraper
     books_per_page = @doc.search('form.form-horizontal').text.strip!.split(' ')[-1].to_i
     @total_page = (total_books.to_f / books_per_page).ceil(0)
     puts @total_page
-    @book_list = []
+    @book_list = {}
     @categories = {}
 
     collect_categories
@@ -35,25 +35,21 @@ class Scraper
     html = URI.open(url)&.read
     doc = Nokogiri::HTML(html)
     doc.search('article.product_pod').each do |ele|
-      book = {
+      title = ele.css('h3')[0].children[0].attributes['title'].value
+      @book_list[ele.css('h3')[0].children[0].attributes['title'].value] = {
         'img' => @url + ele.css('img.thumbnail')[0].attributes['src'].value,
         'rate' => convert(ele.css('p.star-rating')[0].attributes['class'].value.split(' ')[1]),
-        'title' => ele.css('h3')[0].children[0].attributes['title'].value,
-        'link' => @url + ele.css('h3')[0].children[0].attributes['href'].value,
+        'link' => @url + "catalogue/" + ele.css('h3')[0].children[0].attributes['href'].value,
         'price in £' => ele.css('p.price_color').text.tr('£', '').to_f,
-        'in stock' => ele.css('p.instock.availability').text.strip! == 'In stock',
-        'categories' => []
+        'in stock' => ele.css('p.instock.availability').text.strip! == 'In stock'
       }
-      @book_list << book
+      collect_more_info(title, @book_list[title]['link'])
     end
   end
 
   def collect_categories
     # categories setup
     category = @doc.search('ul.nav.nav-list').children[1].children[3].children
-    link = @doc.search('ul.nav.nav-list').children[1].children[1].attributes['href'].value
-    @categories[@doc.search('ul.nav.nav-list').children[1].children[1].text.strip!] = @url + link
-
     category.each do |x|
       @categories[x.text.strip!] = @url + x.children[1].attributes['href'].value if x.text.strip! != ''
     end
@@ -72,6 +68,30 @@ class Scraper
     current = Time.now - current
     puts "Time execution: #{current}"
   end
+
+  def print_books
+    @book_list.each do |title, info|
+      puts "#{title}:"
+      info.each do |c, i|
+        puts "\t#{c} - #{i}"
+      end
+    end
+  end
+
+  def collect_more_info(title, book_url)
+    html = URI.open(book_url)&.read
+    doc = Nokogiri::HTML(html)
+    info = {
+        "category" => doc.search("ul.breadcrumb")[0].children[5].text.strip,
+        "description" => doc.xpath("//p")[3].text,
+        "upc" => doc.xpath("//tr")[0].children[2].text,
+        "available" => doc.xpath("//tr")[5].children.text.strip!.split(' ')[-2].gsub("(","").to_i
+    }
+    info.each do |c, i|
+      @book_list[title][c] = i
+    end
+  end
 end
 
 scraper = Scraper.new
+scraper.print_books

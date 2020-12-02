@@ -37,11 +37,9 @@ class Scraper
     doc.search('article.product_pod').each do |ele|
       title = ele.css('h3')[0].children[0].attributes['title'].value
       @book_list[ele.css('h3')[0].children[0].attributes['title'].value] = {
-        'img' => @url + ele.css('img.thumbnail')[0].attributes['src'].value,
         'rate' => convert(ele.css('p.star-rating')[0].attributes['class'].value.split(' ')[1]),
         'link' => @url + "catalogue/" + ele.css('h3')[0].children[0].attributes['href'].value,
         'price in £' => ele.css('p.price_color').text.tr('£', '').to_f,
-        'in stock' => ele.css('p.instock.availability').text.strip! == 'In stock'
       }
       collect_more_info(title, @book_list[title]['link'])
     end
@@ -85,11 +83,13 @@ class Scraper
         "category" => doc.search("ul.breadcrumb")[0].children[5].text.strip,
         "description" => doc.xpath("//p")[3].text,
         "upc" => doc.xpath("//tr")[0].children[2].text,
-        "available" => doc.xpath("//tr")[5].children.text.strip!.split(' ')[-2].gsub("(","").to_i
+        "available" => doc.xpath("//tr")[5].children.text.strip!.split(' ')[-2].gsub("(","").to_i,
+        "img" => doc.search("div.item.active")[0].children[1].attributes['src'].value.gsub("../../", @url)
     }
     info.each do |c, i|
       @book_list[title][c] = i
     end
+    puts info
   end
 end
 

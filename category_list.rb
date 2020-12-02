@@ -1,7 +1,6 @@
 # frozen_string_literal: true
-
-require 'nokogiri'
 require 'open-uri'
+require 'nokogiri'
 require 'fox16'
 include Fox
 
@@ -18,8 +17,8 @@ class CategoryList < FXGroupBox
   def selecting
     @list.connect(SEL_COMMAND) do
       @selected = []
-      each { |cate| @selected << cate if cate.selected? }
-      puts 'Selected:'
+      @list.each { |cate| @selected << cate.text if cate.selected? }
+      puts "Selected: #{@selected}"
     end
   end
 
@@ -27,13 +26,16 @@ class CategoryList < FXGroupBox
     url = 'http://books.toscrape.com/'
     html = URI.open(url)&.read
     doc = Nokogiri::HTML(html)
-    category = doc.search('ul.nav.nav-list').children[1].children[3].children
-    category.each do |x|
-      @list.appendItem(x.text.strip!) if x.text.strip! != ''
+    categories = []
+    doc.search('ul.nav.nav-list').children[1].children[3].children.each do |x|
+      if x.text.strip! != '' then categories << x.text.strip! end
+    end
+    categories.each do |x|
+      @list.appendItem(x)
     end
   end
 
   def get_selected_categories
-    @selected
+    return @selected
   end
 end

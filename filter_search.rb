@@ -13,4 +13,10 @@ class FilterSearch < FXGroupBox
     @content = ContentInclude.new(self, 250)
     @submission = Submission.new(self, 250)
   end
+
+  def print
+    puts @list.get_selected_categories
+    puts @box.get_range
+    puts @content.get_content
+  end
 end

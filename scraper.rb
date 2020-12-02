@@ -12,11 +12,7 @@ class Scraper
     total_books = @doc.search('form.form-horizontal').text.strip!.split(' ')[0].to_i
     books_per_page = @doc.search('form.form-horizontal').text.strip!.split(' ')[-1].to_i
     @total_page = (total_books.to_f / books_per_page).ceil(0)
-    puts @total_page
     @book_list = {}
-    @categories = {}
-
-    collect_categories
     collect_books_threading
   end
 
@@ -45,16 +41,6 @@ class Scraper
     end
   end
 
-  def collect_categories
-    # categories setup
-    category = @doc.search('ul.nav.nav-list').children[1].children[3].children
-    category.each do |x|
-      @categories[x.text.strip!] = @url + x.children[1].attributes['href'].value if x.text.strip! != ''
-    end
-    
-    @categories
-  end
-
   def collect_books_threading
     current = Time.now
     threads = []
@@ -65,15 +51,6 @@ class Scraper
     threads.each(&:join)
     current = Time.now - current
     puts "Time execution: #{current}"
-  end
-
-  def print_books
-    @book_list.each do |title, info|
-      puts "#{title}:"
-      info.each do |c, i|
-        puts "\t#{c} - #{i}"
-      end
-    end
   end
 
   def collect_more_info(title, book_url)
@@ -89,9 +66,5 @@ class Scraper
     info.each do |c, i|
       @book_list[title][c] = i
     end
-    puts info
   end
 end
-
-scraper = Scraper.new
-scraper.print_books

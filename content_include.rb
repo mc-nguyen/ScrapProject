@@ -8,7 +8,7 @@ class ContentInclude < FXGroupBox
     @content = FXTextField.new(self, 20,
                              :opts => TEXTFIELD_NORMAL | LAYOUT_EXPLICIT | LAYOUT_CENTER_X,
                              :x => 50, :y => 20, :height => 30, :width => 200)
-    @content.connect(SEL_CHANGED) do
+    @content.connect(SEL_COMMAND) do
       puts @content.text
     end
   end

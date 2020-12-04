@@ -15,14 +15,10 @@ class Book_Info_Window < FXMainWindow
 end
 
 class InfoLayout < FXGroupBox
-
   def initialize(p, book)
-    super(
-        p, "",
+    super(p, "",
         :opts => GROUPBOX_TITLE_CENTER | LAYOUT_FILL_X | LAYOUT_FIX_Y)
-    elements(book)
-  end
-  def elements(book)
+
     detailsFrame = FXHorizontalFrame.new(self, :opts => LAYOUT_FILL_X)
     # photo of book + details
     @pic = URI.open(book["img"])

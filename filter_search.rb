@@ -15,8 +15,10 @@ class FilterSearch < FXGroupBox
   end
 
   def print
-    puts @list.get_selected_categories
-    puts @box.get_range
-    puts @content.get_content
+    [
+      @list.get_selected_categories,
+      @box.get_range,
+      @content.get_content
+    ]
   end
 end

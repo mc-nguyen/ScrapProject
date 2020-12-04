@@ -11,19 +11,19 @@ class PriceRange < FXGroupBox
   end
 
   def elements
-    @max = @min = 0
+    @min = 0.0
+    @max = Float::INFINITY
     FXLabel.new(self, "Min = ", :opts => LAYOUT_EXPLICIT, :x => 20, :y => 20, :width => 50, :height => 30)
-    min = FXTextField.new(self, 20,
-                          :opts => TEXTFIELD_INTEGER | LAYOUT_EXPLICIT | TEXTFIELD_NORMAL,
+    min = FXTextField.new(self, 20,:opts => TEXTFIELD_REAL | LAYOUT_EXPLICIT | TEXTFIELD_NORMAL,
                           :x => 70, :y => 20, :height => 30, :width => 180)
     min.connect(SEL_CHANGED) do
-      @min = min.text.to_i
+      @min = min.text.to_f
     end
     FXLabel.new(self, "Max = ", :opts => LAYOUT_EXPLICIT, :x => 320, :y => 20, :width => 50, :height => 30)
-    max = FXTextField.new(self, 20, :opts => TEXTFIELD_INTEGER | LAYOUT_EXPLICIT | TEXTFIELD_NORMAL,
+    max = FXTextField.new(self, 20, :opts => TEXTFIELD_REAL | LAYOUT_EXPLICIT | TEXTFIELD_NORMAL,
                           :x => 370, :y => 20, :height => 30, :width => 180)
     max.connect(SEL_CHANGED) do
-      @max = max.text.to_i
+      @max = max.text.to_f
     end
   end
 

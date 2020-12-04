@@ -71,4 +71,8 @@ class Scraper
   def get_book(title)
     @book_list[title]
   end
+
+  def library
+    @book_list
+  end
 end

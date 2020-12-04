@@ -30,14 +30,14 @@ class InfoLayout < FXGroupBox
     @pic2.scale(290, 400, 1)
     FXImageFrame.new(detailsFrame, @pic2)
     textFrame = FXVerticalFrame.new(detailsFrame, :opts => LAYOUT_FILL)
-    rating = FXLabel.new(textFrame, "RATING: " + book["rate"].to_s + "/5 Stars")
-    price = FXLabel.new(textFrame, "PRICE: £" + book["price in £"].to_s)
-    category = FXLabel.new(textFrame, "CATEGORY: " + book["category"])
-    available = FXLabel.new(textFrame, "COPIES AVAILABLE: " + book["available"].to_s)
-    descLabel = FXLabel.new(textFrame, "DESCRIPTION:")
+    FXLabel.new(textFrame, "RATING: " + book["rate"].to_s + "/5 Stars")
+    FXLabel.new(textFrame, "PRICE: £" + book["price in £"].to_s)
+    FXLabel.new(textFrame, "CATEGORY: " + book["category"])
+    FXLabel.new(textFrame, "COPIES AVAILABLE: " + book["available"].to_s)
+    FXLabel.new(textFrame, "DESCRIPTION:")
     desc = FXText.new(textFrame, :opts => LAYOUT_FILL | TEXT_READONLY | TEXT_WORDWRAP)
     desc.appendText(book["description"])
-    upc = FXLabel.new(textFrame, "UPC: " + book["upc"])
+    FXLabel.new(textFrame, "UPC: " + book["upc"])
   end
 end
 

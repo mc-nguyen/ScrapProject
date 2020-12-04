@@ -5,8 +5,8 @@ include Fox
 
 class Book_Info_Window < FXMainWindow
   def initialize(app, title, book)
-    super(app, "Book Information", :width => 800, :height => 450)
-    elements = InfoLayout.new(self, title, book)
+    super(app, title, :width => 800, :height => 420)
+    elements = InfoLayout.new(self, book)
   end
   def create
     super
@@ -16,10 +16,10 @@ end
 
 class InfoLayout < FXGroupBox
 
-  def initialize(p, title, book)
+  def initialize(p, book)
     super(
-        p, title,
-        :opts => GROUPBOX_TITLE_CENTER | LAYOUT_FILL_X | FRAME_RIDGE | LAYOUT_FIX_Y)
+        p, "",
+        :opts => GROUPBOX_TITLE_CENTER | LAYOUT_FILL_X | LAYOUT_FIX_Y)
     elements(book)
   end
   def elements(book)
@@ -34,7 +34,6 @@ class InfoLayout < FXGroupBox
     price = FXLabel.new(textFrame, "PRICE: £" + book["price in £"].to_s)
     category = FXLabel.new(textFrame, "CATEGORY: " + book["category"])
     available = FXLabel.new(textFrame, "COPIES AVAILABLE: " + book["available"].to_s)
-    link = FXLabel.new(textFrame, "LINK: " + book["link"])
     descLabel = FXLabel.new(textFrame, "DESCRIPTION:")
     desc = FXText.new(textFrame, :opts => LAYOUT_FILL | TEXT_READONLY | TEXT_WORDWRAP)
     desc.appendText(book["description"])

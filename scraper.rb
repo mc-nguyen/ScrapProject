@@ -32,12 +32,20 @@ class Scraper
     doc = Nokogiri::HTML(html)
     doc.search('article.product_pod').each do |ele|
       title = ele.css('h3')[0].children[0].attributes['title'].value
-      @book_list[ele.css('h3')[0].children[0].attributes['title'].value] = {
-        'rate' => convert(ele.css('p.star-rating')[0].attributes['class'].value.split(' ')[1]),
-        'link' => @url + "catalogue/" + ele.css('h3')[0].children[0].attributes['href'].value,
-        'price in £' => ele.css('p.price_color').text.tr('£', '').to_f,
+      link = @url + "catalogue/" + ele.css('h3')[0].children[0].attributes['href'].value
+      book_html = URI.open(link)&.read
+      book_doc = Nokogiri::HTML(book_html)
+      info = {
+          "category" => book_doc.search("ul.breadcrumb")[0].children[5].text.strip,
+          "description" => book_doc.xpath("//p")[3].text,
+          "upc" => book_doc.xpath("//tr")[0].children[2].text,
+          "available" => book_doc.xpath("//tr")[5].children.text.strip!.split(' ')[-2].gsub("(","").to_i,
+          "img" => book_doc.search("div.item.active")[0].children[1].attributes['src'].value.gsub("../../", @url),
+          "rate" => convert(ele.css('p.star-rating')[0].attributes['class'].value.split(' ')[1]),
+          "link" => link,
+          "price in £" => ele.css('p.price_color').text.tr('£', '').to_f,
       }
-      collect_more_info(title, @book_list[title]['link'])
+      @book_list[title] = info
     end
   end
 

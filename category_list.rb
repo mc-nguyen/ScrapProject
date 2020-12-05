@@ -6,19 +6,15 @@ include Fox
 
 class CategoryList < FXGroupBox
   def initialize(p, y)
+    @selected = []
     super(p, "Choose Category: ", :opts => LAYOUT_FILL_X | FRAME_RIDGE | LAYOUT_FIX_Y,
           :y => y)
     @list = FXList.new(self, opts: LIST_MULTIPLESELECT | LAYOUT_EXPLICIT,
                        x: 40, y: 30, width: 500, height: 100)
     collecting
-    selecting
-  end
-
-  def selecting
     @list.connect(SEL_COMMAND) do
       @selected = []
       @list.each { |cate| @selected << cate.text if cate.selected? }
-      puts "Selected: #{@selected}"
     end
   end
 

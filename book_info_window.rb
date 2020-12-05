@@ -5,18 +5,20 @@ include Fox
 
 class InfoLayout < FXGroupBox
   def initialize(p, title, book)
-    super(p, title,
+    super(p, "Book Details",
         :opts => GROUPBOX_TITLE_CENTER | LAYOUT_EXPLICIT | FRAME_RIDGE,
           x: 610, width: 590, height: 600)
 
     detailsFrame = FXHorizontalFrame.new(self, :opts => LAYOUT_FILL_X)
     # photo of book + details
+    photoFrame = FXVerticalFrame.new(detailsFrame)
     pic = URI.open(book["img"])&.read
     pic2 = FXJPGIcon.new(app, pic)
     pic2.scale(290, 400)
-    @image = FXList.new(detailsFrame, opts: LAYOUT_EXPLICIT, width: 300, height: 410)
+    @image = FXList.new(photoFrame, opts: LAYOUT_EXPLICIT, width: 300, height: 410)
     @image.appendItem("", pic2)
-    textFrame = FXVerticalFrame.new(detailsFrame, :opts => LAYOUT_FILL | LAYOUT_FIX_Y, y: 900)
+    textFrame = FXVerticalFrame.new(detailsFrame, :opts => LAYOUT_FILL | LAYOUT_FIX_Y, y: 0)
+    @book_title = FXLabel.new(textFrame, "TITLE: " + title)
     @rate = FXLabel.new(textFrame, "RATING: " + book["rate"].to_s + "/5 Stars")
     @price = FXLabel.new(textFrame, "PRICE: £" + book["price in £"].to_s)
     @category = FXLabel.new(textFrame, "CATEGORY: " + book["category"])
@@ -31,8 +33,9 @@ class InfoLayout < FXGroupBox
     pic = URI.open(info["img"])&.read
     pic = FXJPGIcon.new(app, pic)
     pic.scale(290, 400)
+    pic.create()
     @image.setItemIcon(0, pic)
-
+    @book_title.text = "TITLE: " + title
     @rate.text = "RATING: " + info["rate"].to_s + "/5 Stars"
     @price.text = "PRICE: £" + info["price in £"].to_s
     @category.text = "CATEGORY: " + info["category"]

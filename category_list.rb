@@ -32,6 +32,14 @@ class CategoryList < FXGroupBox
   end
 
   def get_selected_categories
-    return @selected
+    @selected
+  end
+
+  def get_categories
+    categories = []
+    @list.each do |item|
+      categories << item.text
+    end
+    categories
   end
 end

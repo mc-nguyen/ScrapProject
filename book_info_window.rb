@@ -7,7 +7,7 @@ class InfoLayout < FXGroupBox
   def initialize(p, title, book)
     super(p, "Book Details",
         :opts => GROUPBOX_TITLE_CENTER | LAYOUT_EXPLICIT | FRAME_RIDGE,
-          x: 610, width: 590, height: 600)
+          x: 610, width: 590, height: 450)
 
     detailsFrame = FXHorizontalFrame.new(self, :opts => LAYOUT_FILL_X)
     # photo of book + details

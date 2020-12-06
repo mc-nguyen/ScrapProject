@@ -19,18 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="544f15b0-6e9d-4c1d-8209-163beaf6264a" name="Default Changelist" comment="add matrix area">
+    <list default="true" id="544f15b0-6e9d-4c1d-8209-163beaf6264a" name="Default Changelist" comment="List book with icons">
+      <change afterPath="$PROJECT_DIR$/scraper_csv.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PriceRange.rb" beforeDir="false" afterPath="$PROJECT_DIR$/PriceRange.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book_info_window.rb" beforeDir="false" afterPath="$PROJECT_DIR$/book_info_window.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book_list.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/category_list.rb" beforeDir="false" afterPath="$PROJECT_DIR$/category_list.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content_include.rb" beforeDir="false" afterPath="$PROJECT_DIR$/content_include.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/filter_search.rb" beforeDir="false" afterPath="$PROJECT_DIR$/filter_search.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.rb" beforeDir="false" afterPath="$PROJECT_DIR$/gui.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results.rb" beforeDir="false" afterPath="$PROJECT_DIR$/results.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/scraper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/submission.rb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +43,7 @@
     </option>
   </component>
   <component name="Git.Pull.Settings">
-    <option name="BRANCH" value="book_info_window" />
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,6 +57,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -173,7 +171,8 @@
       <workItem from="1607039938654" duration="227000" />
       <workItem from="1607040352882" duration="6000" />
       <workItem from="1607050133554" duration="9181000" />
-      <workItem from="1607116349424" duration="29804000" />
+      <workItem from="1607116349424" duration="30043000" />
+      <workItem from="1607230610502" duration="3353000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project with parsing a page from http://books.toscrape.com/">
       <created>1606082487045</created>
@@ -301,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607059422183</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="List book with icons">
+      <created>1607147824118</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1607147824118</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +338,8 @@
     <MESSAGE value="Get img link with higher resolution" />
     <MESSAGE value="Transfer Ryan's code and reduce" />
     <MESSAGE value="add matrix area" />
-    <option name="LAST_COMMIT_MESSAGE" value="add matrix area" />
+    <MESSAGE value="List book with icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="List book with icons" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1606177744224">
@@ -363,46 +370,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="761" y="224" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606082380469" />
-    <state width="938" height="322" key="GridCell.Tab.0.bottom" timestamp="1607147448969">
+    <state width="938" height="279" key="GridCell.Tab.0.bottom" timestamp="1607233676729">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="322" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607147448969" />
-    <state width="938" height="322" key="GridCell.Tab.0.center" timestamp="1607147448969">
+    <state width="938" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607233676729" />
+    <state width="938" height="279" key="GridCell.Tab.0.center" timestamp="1607233676729">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="322" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607147448969" />
-    <state width="938" height="322" key="GridCell.Tab.0.left" timestamp="1607147448969">
+    <state width="938" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607233676729" />
+    <state width="938" height="279" key="GridCell.Tab.0.left" timestamp="1607233676729">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="322" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607147448969" />
-    <state width="938" height="322" key="GridCell.Tab.0.right" timestamp="1607147448969">
+    <state width="938" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607233676729" />
+    <state width="938" height="279" key="GridCell.Tab.0.right" timestamp="1607233676729">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="322" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607147448969" />
-    <state width="938" height="347" key="GridCell.Tab.1.bottom" timestamp="1607138235416">
+    <state width="938" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607233676729" />
+    <state width="938" height="347" key="GridCell.Tab.1.bottom" timestamp="1607148043614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607138235416" />
-    <state width="938" height="347" key="GridCell.Tab.1.center" timestamp="1607138235416">
+    <state width="938" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607148043614" />
+    <state width="938" height="347" key="GridCell.Tab.1.center" timestamp="1607148043614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607138235416" />
-    <state width="938" height="347" key="GridCell.Tab.1.left" timestamp="1607138235416">
+    <state width="938" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607148043614" />
+    <state width="938" height="347" key="GridCell.Tab.1.left" timestamp="1607148043614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607138235416" />
-    <state width="938" height="347" key="GridCell.Tab.1.right" timestamp="1607138235416">
+    <state width="938" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607148043614" />
+    <state width="938" height="347" key="GridCell.Tab.1.right" timestamp="1607148043614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607138235416" />
+    <state width="938" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607148043614" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1606097322316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606097322316" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1607059424500">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1607147828804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607059424500" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607147828804" />
+    <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1607233428274">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607233428274" />
     <state x="752" y="378" key="scopes" timestamp="1606365276214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -417,6 +428,6 @@
     <SUITE FILE_PATH="coverage/ScrapProject@scraper.rcov" NAME="scraper Coverage Results" MODIFIED="1606869247342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
     <SUITE FILE_PATH="coverage/ScrapProject@bookFinder.rcov" NAME="bookFinder Coverage Results" MODIFIED="1606093926474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
     <SUITE FILE_PATH="coverage/ScrapProject@category_list.rcov" NAME="category_list Coverage Results" MODIFIED="1606258214393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
-    <SUITE FILE_PATH="coverage/ScrapProject@gui.rcov" NAME="gui Coverage Results" MODIFIED="1607147448962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
+    <SUITE FILE_PATH="coverage/ScrapProject@gui.rcov" NAME="gui Coverage Results" MODIFIED="1607233676718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
   </component>
 </project>

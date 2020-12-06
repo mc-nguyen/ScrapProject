@@ -49,4 +49,8 @@ class Results < FXList
   def get_info
     [getItem(@selected).text, @books[getItem(@selected).text]]
   end
+
+  def get_library
+    @books
+  end
 end

@@ -19,4 +19,8 @@ class FilterSearch < FXGroupBox
         'include' => @content.get_content
     }
   end
+
+  def get_categories
+    @list.get_categories
+  end
 end

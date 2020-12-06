@@ -50,15 +50,12 @@ class Scraper
   end
 
   def collect_books_threading
-    current = Time.now
     threads = []
     @total_page.times do |i|
       url = @url + "catalogue/page-#{i + 1}.html"
       threads << Thread.new { collect_books(url) }
     end
     threads.each(&:join)
-    current = Time.now - current
-    puts "Time execution: #{current}"
   end
 
   def collect_more_info(title, book_url)

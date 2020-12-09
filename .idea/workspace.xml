@@ -19,14 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="544f15b0-6e9d-4c1d-8209-163beaf6264a" name="Default Changelist" comment="List book with icons">
-      <change afterPath="$PROJECT_DIR$/scraper_csv.rb" afterDir="false" />
+    <list default="true" id="544f15b0-6e9d-4c1d-8209-163beaf6264a" name="Default Changelist" comment="Finish project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book_info_window.rb" beforeDir="false" afterPath="$PROJECT_DIR$/book_info_window.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category_list.rb" beforeDir="false" afterPath="$PROJECT_DIR$/category_list.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter_search.rb" beforeDir="false" afterPath="$PROJECT_DIR$/filter_search.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui.rb" beforeDir="false" afterPath="$PROJECT_DIR$/gui.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results.rb" beforeDir="false" afterPath="$PROJECT_DIR$/results.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scraper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/scraper.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +166,8 @@
       <workItem from="1607040352882" duration="6000" />
       <workItem from="1607050133554" duration="9181000" />
       <workItem from="1607116349424" duration="30043000" />
-      <workItem from="1607230610502" duration="3353000" />
+      <workItem from="1607230610502" duration="4006000" />
+      <workItem from="1607542507376" duration="764000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project with parsing a page from http://books.toscrape.com/">
       <created>1606082487045</created>
@@ -307,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607147824118</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Finish project">
+      <created>1607234020526</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1607234020527</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +341,8 @@
     <MESSAGE value="Transfer Ryan's code and reduce" />
     <MESSAGE value="add matrix area" />
     <MESSAGE value="List book with icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="List book with icons" />
+    <MESSAGE value="Finish project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish project" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1606177744224">
@@ -370,22 +373,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="761" y="224" key="Github.UntrackedFilesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606082380469" />
-    <state width="938" height="279" key="GridCell.Tab.0.bottom" timestamp="1607233676729">
+    <state width="938" height="279" key="GridCell.Tab.0.bottom" timestamp="1607240671948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607233676729" />
-    <state width="938" height="279" key="GridCell.Tab.0.center" timestamp="1607233676729">
+    <state width="938" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607240671948" />
+    <state width="938" height="279" key="GridCell.Tab.0.center" timestamp="1607240671947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607233676729" />
-    <state width="938" height="279" key="GridCell.Tab.0.left" timestamp="1607233676729">
+    <state width="938" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607240671947" />
+    <state width="938" height="279" key="GridCell.Tab.0.left" timestamp="1607240671947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607233676729" />
-    <state width="938" height="279" key="GridCell.Tab.0.right" timestamp="1607233676729">
+    <state width="938" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607240671947" />
+    <state width="938" height="279" key="GridCell.Tab.0.right" timestamp="1607240671947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607233676729" />
+    <state width="938" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607240671947" />
     <state width="938" height="347" key="GridCell.Tab.1.bottom" timestamp="1607148043614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -406,10 +409,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606097322316" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1607147828804">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1607234024235">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607147828804" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607234024235" />
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1607233428274">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -58,21 +58,6 @@ class Scraper
     threads.each(&:join)
   end
 
-  def collect_more_info(title, book_url)
-    html = URI.open(book_url)&.read
-    doc = Nokogiri::HTML(html)
-    info = {
-        "category" => doc.search("ul.breadcrumb")[0].children[5].text.strip,
-        "description" => doc.xpath("//p")[3].text,
-        "upc" => doc.xpath("//tr")[0].children[2].text,
-        "available" => doc.xpath("//tr")[5].children.text.strip!.split(' ')[-2].gsub("(","").to_i,
-        "img" => doc.search("div.item.active")[0].children[1].attributes['src'].value.gsub("../../", @url)
-    }
-    info.each do |c, i|
-      @book_list[title][c] = i
-    end
-  end
-
   def get_book(title)
     @book_list[title]
   end
